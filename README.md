@@ -27,7 +27,7 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  ![alt text](https://imgur.com/a/Qios3zN)
+  <img src="https://imgur.com/a/47a4NDK" width="350" title="hover text">
   <br/>
 
   <h3><b>Les 4 chevaux en Console</b></h3>

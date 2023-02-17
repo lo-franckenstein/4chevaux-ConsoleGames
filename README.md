@@ -25,12 +25,7 @@ OPTIONAL SECTIONS:
 After you're finished please remove all the comments and instructions!
 -->
 
-<div align="center">
-
-  <img src="https://imgur.com/a/47a4NDK" width="100" height="100">
-  <h3><b>Les 4 chevaux en Console</b></h3>
-
-</div>
+# Les 4 chevaux en console
 
 <!-- TABLE OF CONTENTS -->
 

@@ -27,10 +27,10 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="Divers/bannerreadme.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b>Les 4 chevaux en Console</b></h3>
 
 </div>
 
@@ -53,12 +53,13 @@ After you're finished please remove all the comments and instructions!
 - [⭐️ Montre ton soutien](#support)
 - [❓ FAQ](#faq)
 - [📝 License](#license)
+- [📚 Algorithme](#algo)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Les 4 chevaux en console] <a name="about-project"></a>
+# 📖 Les 4 chevaux en console <a name="about-project"></a>
 
-**[Les 4 chevaux en console]** est un jeu qui reprend carrément le jeu complet des 4 chevaux. Sauf que tout cela se fait dans la console! Vous pourrez donc jouer tout seul, ou jusqu'à 4 joueurs.
+**Les 4 chevaux en console** est un jeu qui reprend carrément le jeu complet des 4 chevaux. Sauf que tout cela se fait dans la console! Vous pourrez donc jouer tout seul, ou jusqu'à 4 joueurs.
 
 ## 🛠 Coder avec <a name="built-with"></a>
 
@@ -79,21 +80,19 @@ After you're finished please remove all the comments and instructions!
 - **[Gantt](https://www.teamgantt.com/)** TeamGantt est également un outil très bien, car il a pû m'aider à organiser mon projet.
 - **[Google Docs](https://www.google.com/intl/fr_be/docs/about/)** Google Docs est un outil qui m'a permis de créer mes spécifications facilements.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Vidéo-Démonstration <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+> Prochainement... 👀
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
+## 💻 Essayer <a name="getting-started"></a>
 
 > Describe how a new developer could make use of your project.
 
@@ -162,7 +161,7 @@ Example command:
 --->
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
 
 <!-- AUTHORS -->
 
@@ -182,7 +181,7 @@ Example command:
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
 
 <!-- SUPPORT -->
 
@@ -192,7 +191,7 @@ Example command:
 
 If you like this project...
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
 
 <!-- LICENSE -->
 
@@ -202,4 +201,4 @@ This project is [MIT](./LICENSE) licensed.
 
 _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>

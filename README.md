@@ -92,11 +92,23 @@ After you're finished please remove all the comments and instructions!
 
 ### Installation du logiciel nécessaire
 
-Il faudra donc que vous installiez [Visual Community 2022]([https://github.com/githubhandle](https://visualstudio.microsoft.com/fr/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false))
+Il faudra donc que vous installiez l'un des deux logiciels:
+
+> **[Visual Community 2022](https://visualstudio.microsoft.com/fr/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)**
+
+> **[Visual Community 2019](https://visualstudio.microsoft.com/fr/vs/older-downloads/)**
 
 ### Prérequis
 
-Après avoir installer votre logiciel de développement.
+Après avoir installer votre logiciel de développement, vous devrez ajouter les packages diffèrents:
+
+📦 **Visual Studio Community 2022**
+
+📦 **Visual Studio Community 2019**
+> 
+> 
+> 
+
 
 <!--
 Example commands:

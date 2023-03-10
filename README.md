@@ -103,6 +103,9 @@ Il faudra donc que vous installiez l'un des deux logiciels:
 Après avoir installer votre logiciel de développement, vous devrez ajouter les packages diffèrents:
 
 📦 **Visual Studio Community 2022**
+> .NET CORE
+>
+
 
 📦 **Visual Studio Community 2019**
 > 

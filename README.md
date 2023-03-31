@@ -87,25 +87,31 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Essayer <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+> Le projet est fait également à ce que vous essayer le programme sur votre ordinateur.
+> Ne vous inquiétez pas, le tutoriel est assez simple!
 
-To get a local copy up and running, follow these steps.
+### Installation du logiciel nécessaire
 
-### Prerequisites
+Il faudra donc que vous installiez l'un des deux logiciels:
 
-In order to run this project you need:
+> **[Visual Community 2022](https://visualstudio.microsoft.com/fr/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)**
 
-<!--
-Example command:
+> **[Visual Community 2019](https://visualstudio.microsoft.com/fr/vs/older-downloads/)**
 
-```sh
- gem install rails
-```
- -->
+### Prérequis
 
-### Setup
+Après avoir installer votre logiciel de développement, vous devrez ajouter les packages diffèrents:
 
-Clone this repository to your desired folder:
+📦 **Visual Studio Community 2022**
+> .NET CORE
+>
+
+
+📦 **Visual Studio Community 2019**
+> 
+> 
+> 
+
 
 <!--
 Example commands:

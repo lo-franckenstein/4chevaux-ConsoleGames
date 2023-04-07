@@ -2,7 +2,6 @@
 
 # Les 4 chevaux en console
 
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Sommaire
 

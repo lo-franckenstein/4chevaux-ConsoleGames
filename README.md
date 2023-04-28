@@ -1,33 +1,7 @@
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
--->
-
 # Les 4 chevaux en console
 
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Sommaire
 
@@ -39,12 +13,11 @@ After you're finished please remove all the comments and instructions!
 - [💻 Essayer](#getting-started)
   - [Installation du logiciel nécessaire](#setup)
   - [Prérequis](#prerequisites)
-  - [Installer le projet](#install)
-  - [Usage](#usage)
-  - [Exécutions & tests](#run-tests)
+  - [Télécharger le projet avec](#install)
+  - [Ouvrir le projet](#usage)
+  - [Exécution](#run-tests)
 - [👥 Auteurs et intervenants](#authors)
 - [⭐️ Montre ton soutien](#support)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 - [📚 Algorithme](#algo)
 
@@ -90,7 +63,7 @@ After you're finished please remove all the comments and instructions!
 > Le projet est fait également à ce que vous essayer le programme sur votre ordinateur.
 > Ne vous inquiétez pas, le tutoriel est assez simple!
 
-### Installation du logiciel nécessaire
+### Installation du logiciel nécessaire <a name="setup"></a>
 
 Il faudra donc que vous installiez l'un des deux logiciels:
 
@@ -98,13 +71,14 @@ Il faudra donc que vous installiez l'un des deux logiciels:
 
 > **[Visual Community 2019](https://visualstudio.microsoft.com/fr/vs/older-downloads/)**
 
-### Prérequis
+### Prérequis <a name="prerequisites"></a>
 
 Après avoir installer votre logiciel de développement, vous devrez ajouter les packages diffèrents:
 
 📦 **Visual Studio Community 2022**
-> .NET CORE
->
+> Développement .NET Desktop
+> Développement pour la platforme Windows universelle
+> ⚠️ Composants Individuels: .NET Ccore 3.1
 
 
 📦 **Visual Studio Community 2019**
@@ -112,83 +86,48 @@ Après avoir installer votre logiciel de développement, vous devrez ajouter les
 > 
 > 
 
+### Télécharger le projet avec: <a name="install"></a>
 
-<!--
-Example commands:
-
+**Commande Github:**
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/lo-franckenstein/4chevaux-ConsoleGames.git
 ```
---->
+**Téléchargement ZIP:** 
+Rendez-vous sur la page du **[projet](https://github.com/lo-franckenstein/4chevaux-ConsoleGames.git)** pour que vous puissiez installer le pack zip
 
-### Install
+### Ouvrir le projet: <a name="usage"></a>
+Il faudra tout simplement double cliquer sur le fichier solution: Unique fichier sous le format de .sln
 
-Install this project with:
-
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
-
-### Usage
-
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
-
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
+### Exécution <a name="run-tests"></a>
+Pour tester le jeu, il faudra juste donc cliquer sur le bouton play en vert (▶️🟢) au dessus...
 
 
 <p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Auteurs & Intervenants <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+> Mention de tous les intervenants dans le projet
 
-👤 **Author1**
+👤 **Fondateur: Louis Francken**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub Personnel: [@Khreight](https://github.com/Khreight)
+- Github Scolaire: [@lo-franckenstein](https://github.com/lo-franckenstein)
+- Instagram: [@louis.frnckn](https://www.instagram.com/louis.frnckn/)
+- Discord: [@Khreight#1220](https://discord.com/users/739922627203825704)
 
-👤 **Author2**
+👤 **Testeuse & Professeur**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@baudbea](https://github.com/baudbea)
 
 <p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support <a name="support"></a>
+## ⭐️ Montre ton soutien <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+> Tu peux m'envoyer un message au fondateur dans l'un de ses réseaux sociaux afin de discuter/remericer!
 
 <p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
 
@@ -196,8 +135,19 @@ If you like this project...
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+Le projet est interdit à la reproduction sans l'autorisation des personnes qui participent au projet!
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+Merci de respecter cela, car nos créateurs travaillent et ne veulent pas se faire voler leurs travaux.
+
+
+
+<p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>
+
+
+## 📝 Algorithme <a name="algo"></a>
+
+Les algorithmes sont visibles directement dans le dossier [Algorithme](https://github.com/lo-franckenstein/4chevaux-ConsoleGames/tree/main/Algorithme)
+
+
 
 <p align="right">(<a href="#readme-top">Revenir en haut</a>)</p>

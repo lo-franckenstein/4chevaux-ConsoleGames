@@ -1,0 +1,14 @@
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.exe
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.deps.json
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.runtimeconfig.json
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.runtimeconfig.dev.json
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.dll
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.pdb
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.csproj.AssemblyReference.cache
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.GeneratedMSBuildEditorConfig.editorconfig
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.AssemblyInfoInputs.cache
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.AssemblyInfo.cs
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.csproj.CoreCompileInputs.cache
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.dll
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.pdb
+H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.genruntimeconfig.cache

@@ -12,3 +12,17 @@ H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4C
 H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.dll
 H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.pdb
 H:\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.genruntimeconfig.cache
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.exe
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.deps.json
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.runtimeconfig.json
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.runtimeconfig.dev.json
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.dll
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\bin\Debug\netcoreapp3.1\4Chevaux.pdb
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.csproj.AssemblyReference.cache
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.AssemblyInfoInputs.cache
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.AssemblyInfo.cs
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.csproj.CoreCompileInputs.cache
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.dll
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.pdb
+C:\Users\22015\OneDrive\Documents\4chevaux-ConsoleGames\Code\Code général\4Chevaux\obj\Debug\netcoreapp3.1\4Chevaux.genruntimeconfig.cache

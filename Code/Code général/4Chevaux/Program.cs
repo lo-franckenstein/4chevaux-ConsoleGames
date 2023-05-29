@@ -21,6 +21,9 @@ namespace _4Chevaux
             appel mp = new appel();
             ConsoleKeyInfo keyLetter;
             int nbrJoueur;
+            int[,] plateau;
+            string plateauVisuel;
+            plateauVisuel = "";
 
 
 
@@ -35,7 +38,7 @@ namespace _4Chevaux
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            mp.animation();
+            //mp.animation();
             Thread.Sleep(200);
             Console.ForegroundColor = ConsoleColor.White;
             Thread.Sleep(500);
@@ -85,39 +88,78 @@ namespace _4Chevaux
                 Console.WriteLine("Voici les joueurs: \n");
                 Thread.Sleep(200);
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("[+] Joueur 1: Ecurie Rouge");
+                Console.WriteLine("[+] Joueur 1: Ecurie Rouge   XXX");
                 Thread.Sleep(200);
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("[+] Joueur 2: Ecurie Jaune");
+                Console.WriteLine("[+] Joueur 2: Ecurie Jaune   HHH");
+                plateau = new int[8, 27];
             } else if(keyLetter.Key == ConsoleKey.D3 || keyLetter.Key == ConsoleKey.NumPad3) {
                 nbrJoueur = 3;
                 Console.WriteLine("Voici les joueurs: \n");
                 Thread.Sleep(200);
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("[+] Joueur 1: Ecurie Rouge");
+                Console.WriteLine("[+] Joueur 1: Ecurie Rouge   XXX");
                 Thread.Sleep(200);
+                plateau = new int[12, 27];
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("[+] Joueur 2: Ecurie Jaune");
+                Console.WriteLine("[+] Joueur 2: Ecurie Jaune   HHH");
                 Thread.Sleep(200);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("[+] Joueur 3: Ecurie Verte");
+                Console.WriteLine("[+] Joueur 3: Ecurie Verte   OOO");
+
             } else
             {
                 nbrJoueur = 4;
                 Console.WriteLine("Voici les joueurs: \n");
                 Thread.Sleep(200);
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("[+] Joueur 1: Ecurie Rouge");
+                Console.WriteLine("[+] Joueur 1: Ecurie Rouge   XXX");
                 Thread.Sleep(200);
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("[+] Joueur 2: Ecurie Jaune");
+                Console.WriteLine("[+] Joueur 2: Ecurie Jaune   HHH");
                 Thread.Sleep(200);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("[+] Joueur 3: Ecurie Verte");
+                Console.WriteLine("[+] Joueur 3: Ecurie Verte   OOO");
                 Thread.Sleep(200);
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("[+] Joueur 4: Ecurie Bleu");
+                Console.WriteLine("[+] Joueur 4: Ecurie Bleu    GGG");
+                plateau = new int[16, 27];
             }
+            Console.WriteLine("\n\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Voici le plateau:\n");
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////                                                                         /////////////////////////
+            /////////////////////////            ZONE DEFINITION PREMIERE DES PREMIERES PLACES                /////////////////////////
+            /////////////////////////                                                                         /////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            mp.AttributionStart(nbrJoueur, ref plateau);
+            mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
+            Console.WriteLine(plateauVisuel);
+
+
+
+
+
+
+
+
+
+            //mp.GenerationPlateau(nbrJoueur, ref plateau, out plateauVisuel);
+            //mp.ConvertirPlateauEnString(plateau, out plateauVisuel);
+            //Console.WriteLine(plateauVisuel);
+
+
+
+
+
 
 
 

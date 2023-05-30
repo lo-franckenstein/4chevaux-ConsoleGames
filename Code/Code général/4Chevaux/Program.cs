@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security;
 using System.Threading;
 
 namespace _4Chevaux
@@ -19,11 +20,18 @@ namespace _4Chevaux
 
 
             appel mp = new appel();
+            pixelart mpp = new pixelart();
             ConsoleKeyInfo keyLetter;
+            bool verif;
+            int gagnant;
             int nbrJoueur;
             int[,] plateau;
             string plateauVisuel;
             plateauVisuel = "";
+            string deVisuel;
+            int de;
+            int pion;
+            int player;
 
 
 
@@ -38,7 +46,7 @@ namespace _4Chevaux
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            //mp.animation();
+            mp.animation();
             Thread.Sleep(200);
             Console.ForegroundColor = ConsoleColor.White;
             Thread.Sleep(500);
@@ -75,7 +83,7 @@ namespace _4Chevaux
             Thread.Sleep(250);
             Console.Clear();
             Thread.Sleep(250);
-            Console.WriteLine("Combien de joueurs êtes-vous en tout? (2 à 4 joueurs");
+            Console.WriteLine("Combien de joueurs êtes-vous en tout? (2 à 4 joueurs):");
             do
             {
                 keyLetter = Console.ReadKey();
@@ -127,7 +135,6 @@ namespace _4Chevaux
             }
             Console.WriteLine("\n\n");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Voici le plateau:\n");
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -142,19 +149,281 @@ namespace _4Chevaux
 
             mp.AttributionStart(nbrJoueur, ref plateau);
             mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
-            Console.WriteLine(plateauVisuel);
 
 
 
 
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////                                                                         /////////////////////////
+            /////////////////////////            LANCEMENT DU JEU                                             /////////////////////////
+            /////////////////////////                                                                         /////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            do
+            {
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////                                                                         /////////////////////////
+                /////////////////////////            Joueur 1                                                     /////////////////////////
+                /////////////////////////                                                                         /////////////////////////
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                player = 1;
+                Console.WriteLine(plateauVisuel);
+                Thread.Sleep(500);
+                Console.WriteLine("\n\n\nAppuyez sur Enter pour que le joueur 1 lance le dé");
+                do
+                {
+                    keyLetter = Console.ReadKey();
+                } while (keyLetter.Key != ConsoleKey.Enter);
+                Thread.Sleep(100);
+                Console.Clear();
+                Console.Write("Lancement du dé en cours");
+                Thread.Sleep(100);
+                Console.Write(".");
+                Thread.Sleep(100);
+                Console.Write(".");
+                Thread.Sleep(100);
+                Console.WriteLine(".");
+                Thread.Sleep(500);
+                Console.ForegroundColor = ConsoleColor.Red;
+                mp.De(out deVisuel, out de);
+                Console.WriteLine(deVisuel);
+                Thread.Sleep(1000);
+                Console.Clear();
+                Thread.Sleep(500);
+                Console.WriteLine("Quel est le numéro de pions que vous souhaitez déplacer? (1 - 2 - 3 - 4):");
+                Console.WriteLine(plateauVisuel + "|\n\n\n");
+                do
+                {
+                    keyLetter = Console.ReadKey();
+                } while (keyLetter.Key != ConsoleKey.D1 && keyLetter.Key != ConsoleKey.NumPad1 && keyLetter.Key != ConsoleKey.D2 && keyLetter.Key != ConsoleKey.NumPad2 && keyLetter.Key != ConsoleKey.D3 && keyLetter.Key != ConsoleKey.NumPad3 && keyLetter.Key != ConsoleKey.D4 && keyLetter.Key != ConsoleKey.NumPad4);
+                if (keyLetter.Key == ConsoleKey.D1 || keyLetter.Key == ConsoleKey.NumPad1)
+                {
+                    pion = 1;
+                } else if (keyLetter.Key == ConsoleKey.D2 || keyLetter.Key == ConsoleKey.NumPad2)
+                {
+                    pion = 2;
+                } else if (keyLetter.Key == ConsoleKey.D3 || keyLetter.Key == ConsoleKey.NumPad3)
+                {
+                    pion = 3;
+                } else
+                {
+                    pion = 4;
+                }
+
+                mp.DeplacementPion(ref plateau, pion, player, de);
+
+                Console.Clear();
+                
+                mp.VerifWin(plateau, out verif, out gagnant);
+                mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
+
+                if (verif == false)
+                {
+                    player = 2;
+                    Console.WriteLine(plateauVisuel);
+                    Thread.Sleep(500);
+                    Console.WriteLine("\n\n\nAppuyez sur Enter pour que le joueur 2 lance le dé");
+                    do
+                    {
+                        keyLetter = Console.ReadKey();
+                    } while (keyLetter.Key != ConsoleKey.Enter);
+                    Thread.Sleep(100);
+                    Console.Clear();
+                    Console.Write("Lancement du dé en cours");
+                    Thread.Sleep(100);
+                    Console.Write(".");
+                    Thread.Sleep(100);
+                    Console.Write(".");
+                    Thread.Sleep(100);
+                    Console.WriteLine(".");
+                    Thread.Sleep(500);
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    mp.De(out deVisuel, out de);
+                    Console.WriteLine(deVisuel);
+                    Thread.Sleep(1000);
+                    Console.Clear();
+                    Thread.Sleep(500);
+                    Console.WriteLine("Quel est le numéro de pions que vous souhaitez déplacer? (1 - 2 - 3 - 4):");
+                    Console.WriteLine(plateauVisuel + "|\n\n\n");
+                    do
+                    {
+                        keyLetter = Console.ReadKey();
+                    } while (keyLetter.Key != ConsoleKey.D1 && keyLetter.Key != ConsoleKey.NumPad1 && keyLetter.Key != ConsoleKey.D2 && keyLetter.Key != ConsoleKey.NumPad2 && keyLetter.Key != ConsoleKey.D3 && keyLetter.Key != ConsoleKey.NumPad3 && keyLetter.Key != ConsoleKey.D4 && keyLetter.Key != ConsoleKey.NumPad4);
+                    if (keyLetter.Key == ConsoleKey.D1 || keyLetter.Key == ConsoleKey.NumPad1)
+                    {
+                        pion = 1;
+                    }
+                    else if (keyLetter.Key == ConsoleKey.D2 || keyLetter.Key == ConsoleKey.NumPad2)
+                    {
+                        pion = 2;
+                    }
+                    else if (keyLetter.Key == ConsoleKey.D3 || keyLetter.Key == ConsoleKey.NumPad3)
+                    {
+                        pion = 3;
+                    }
+                    else
+                    {
+                        pion = 4;
+                    }
+
+                    mp.DeplacementPion(ref plateau, pion, player, de);
+
+                    Console.Clear();
+
+                    mp.VerifWin(plateau, out verif, out gagnant);
+                    mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
+
+                    if (verif == false)
+                    {
+                        if(nbrJoueur == 3 || nbrJoueur == 4) {
+                            player = 3;
+                            Console.WriteLine(plateauVisuel);
+                            Thread.Sleep(500);
+                            Console.WriteLine("\n\n\nAppuyez sur Enter pour que le joueur 3 lance le dé");
+                            do
+                            {
+                                keyLetter = Console.ReadKey();
+                            } while (keyLetter.Key != ConsoleKey.Enter);
+                            Thread.Sleep(100);
+                            Console.Clear();
+                            Console.Write("Lancement du dé en cours");
+                            Thread.Sleep(100);
+                            Console.Write(".");
+                            Thread.Sleep(100);
+                            Console.Write(".");
+                            Thread.Sleep(100);
+                            Console.WriteLine(".");
+                            Thread.Sleep(500);
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            mp.De(out deVisuel, out de);
+                            Console.WriteLine(deVisuel);
+                            Thread.Sleep(1000);
+                            Console.Clear();
+                            Thread.Sleep(500);
+                            Console.WriteLine("Quel est le numéro de pions que vous souhaitez déplacer? (1 - 2 - 3 - 4):");
+                            Console.WriteLine(plateauVisuel + "|\n\n\n");
+                            do
+                            {
+                                keyLetter = Console.ReadKey();
+                            } while (keyLetter.Key != ConsoleKey.D1 && keyLetter.Key != ConsoleKey.NumPad1 && keyLetter.Key != ConsoleKey.D2 && keyLetter.Key != ConsoleKey.NumPad2 && keyLetter.Key != ConsoleKey.D3 && keyLetter.Key != ConsoleKey.NumPad3 && keyLetter.Key != ConsoleKey.D4 && keyLetter.Key != ConsoleKey.NumPad4);
+                            if (keyLetter.Key == ConsoleKey.D1 || keyLetter.Key == ConsoleKey.NumPad1)
+                            {
+                                pion = 1;
+                            }
+                            else if (keyLetter.Key == ConsoleKey.D2 || keyLetter.Key == ConsoleKey.NumPad2)
+                            {
+                                pion = 2;
+                            }
+                            else if (keyLetter.Key == ConsoleKey.D3 || keyLetter.Key == ConsoleKey.NumPad3)
+                            {
+                                pion = 3;
+                            }
+                            else
+                            {
+                                pion = 4;
+                            }
+
+                            mp.DeplacementPion(ref plateau, pion, player, de);
+
+                            Console.Clear();
+
+                            mp.VerifWin(plateau, out verif, out gagnant);
+                            mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
+
+                            if (verif == false) {
+                                if(nbrJoueur == 4)
+                                {
+                                    player = 4;
+                                    Console.WriteLine(plateauVisuel);
+                                    Thread.Sleep(500);
+                                    Console.WriteLine("\n\n\nAppuyez sur Enter pour que le joueur 4 lance le dé");
+                                    do
+                                    {
+                                        keyLetter = Console.ReadKey();
+                                    } while (keyLetter.Key != ConsoleKey.Enter);
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Console.Write("Lancement du dé en cours");
+                                    Thread.Sleep(100);
+                                    Console.Write(".");
+                                    Thread.Sleep(100);
+                                    Console.Write(".");
+                                    Thread.Sleep(100);
+                                    Console.WriteLine(".");
+                                    Thread.Sleep(500);
+                                    Console.ForegroundColor = ConsoleColor.Blue;
+                                    mp.De(out deVisuel, out de);
+                                    Console.WriteLine(deVisuel);
+                                    Thread.Sleep(1000);
+                                    Console.Clear();
+                                    Thread.Sleep(500);
+                                    Console.WriteLine("Quel est le numéro de pions que vous souhaitez déplacer? (1 - 2 - 3 - 4):");
+                                    Console.WriteLine(plateauVisuel + "|\n\n\n");
+                                    do
+                                    {
+                                        keyLetter = Console.ReadKey();
+                                    } while (keyLetter.Key != ConsoleKey.D1 && keyLetter.Key != ConsoleKey.NumPad1 && keyLetter.Key != ConsoleKey.D2 && keyLetter.Key != ConsoleKey.NumPad2 && keyLetter.Key != ConsoleKey.D3 && keyLetter.Key != ConsoleKey.NumPad3 && keyLetter.Key != ConsoleKey.D4 && keyLetter.Key != ConsoleKey.NumPad4);
+                                    if (keyLetter.Key == ConsoleKey.D1 || keyLetter.Key == ConsoleKey.NumPad1)
+                                    {
+                                        pion = 1;
+                                    }
+                                    else if (keyLetter.Key == ConsoleKey.D2 || keyLetter.Key == ConsoleKey.NumPad2)
+                                    {
+                                        pion = 2;
+                                    }
+                                    else if (keyLetter.Key == ConsoleKey.D3 || keyLetter.Key == ConsoleKey.NumPad3)
+                                    {
+                                        pion = 3;
+                                    }
+                                    else
+                                    {
+                                        pion = 4;
+                                    }
+
+                                    mp.DeplacementPion(ref plateau, pion, player, de);
+
+                                    Console.Clear();
+
+                                    mp.VerifWin(plateau, out verif, out gagnant);
+                                    mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
+                                }
+                            }
+                        }
+                    }
+                }
 
 
 
+            } while (verif == false);
+
+            Thread.Sleep(1000);
+            Console.Clear();
+            Console.WriteLine("Nous avons un gagnant!");
+            Thread.Sleep(200);
+            Console.WriteLine("Il s'agit du joueur numéro: \n\n");
+            Thread.Sleep(1000);
+            if(gagnant == 1)
+            {
+                mpp.de1(ref deVisuel);
+            } else if (gagnant == 2)
+            {
+                mpp.de2(ref deVisuel);
+            } else if(gagnant == 3) 
+            {
+                mpp.de3(ref deVisuel);
+            } else
+            {
+                mpp.de4(ref deVisuel);
+            }
 
 
-            //mp.GenerationPlateau(nbrJoueur, ref plateau, out plateauVisuel);
-            //mp.ConvertirPlateauEnString(plateau, out plateauVisuel);
-            //Console.WriteLine(plateauVisuel);
+
 
 
 

@@ -95,94 +95,605 @@ namespace _4Chevaux
 
         public void AttributionStart(int nbrJoueur, ref int[,] plateau)
         {
-            if (nbrJoueur == 2)
+            for (int i = 0; i < 27 ; i++) // Attribution des pions des deux premiers joueurs à la case de départ. Pas de if car par défaut, il faut minimum 2 joueurs
             {
-                for (int i = 0; i < 4; i++)
+                for (int j = 0; j < 8; j++)
                 {
-                    plateau[0, i] = i + 1;
-                }
-                for (int i = 4; i < 8; i++)
-                {
-                    plateau[0, i] = i + 1;
+                    if(i == 0)
+                    {
+                        plateau[j, i] = 1;
+                        plateau[j, i] = 1;
+                        plateau[j, i] = 1;
+                        plateau[j, i] = 1;
+                        plateau[j, i] = 1;
+                        plateau[j, i] = 1;
+                        plateau[j, i] = 1;
+                        plateau[j, i] = 1;
+                    } else
+                    {
+                        plateau[j, i] = 0;  // On place le reste vide
+                        plateau[j, i] = 0;  // On place le reste vide
+                    }
                 }
             }
-            else if (nbrJoueur == 3)
+
+            if(nbrJoueur == 3 || nbrJoueur == 4)
             {
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 27; i++) // Attribution des pions du troisième joueur à la case de départ.
                 {
-                    plateau[0, i] = i + 1;
-                }
-                for (int i = 4; i < 8; i++)
-                {
-                    plateau[0, i] = i + 1;
-                }
-                for (int i = 8; i < 12; i++)
-                {
-                    plateau[0, i] = i + 1;
+                    for (int j = 8; j < 12; j++)
+                    {
+                        if (i == 0)
+                        {
+                            plateau[j, i] = 1; // On place le cheval en première ligne
+                        }
+                        else
+                        {
+                            plateau[j, i] = 0; // On place le reste vide
+                        }
+                    }
+
                 }
             }
-            else
+
+            if (nbrJoueur == 4)
             {
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 27; i++) // Attribution des pions du quatrième joueur à la case de départ.
                 {
-                    plateau[0, i] = i + 1;
-                }
-                for (int i = 4; i < 8; i++)
-                {
-                    plateau[0, i] = i + 1;
-                }
-                for (int i = 8; i < 12; i++)
-                {
-                    plateau[0, i] = i + 1;
-                }
-                for (int i = 12; i < 16; i++)
-                {
-                    plateau[0, i] = i + 1;
+                    for (int j = 12; j < 16; j++)
+                    {
+                        if (i == 0)
+                        {
+                            plateau[j, i] = 1;  // On place le cheval en première ligne
+                        } else
+                        {
+                        plateau[j, i] = 0;  // On place le reste vide
+                        }
+                    }
                 }
             }
+
         }
 
 
 
         public void ConvertirPlateauEnString(int nbrJoueur, int[,] plateau, out string plateauVisuel)
         {
-            bool trouver;
-            int j;
-            plateauVisuel = "";
-            for (int i = 0;i < 26; i++)
+            plateauVisuel = "PLATEAU:\n\n";
+            for (int i = 0;i < 27; i++) // Mise en place de la barre au-dessus
             {
-                plateauVisuel = plateauVisuel + "+";
-                plateauVisuel = plateauVisuel + "-";
+                plateauVisuel += "+-";
             }
-            plateauVisuel = plateauVisuel + "+\n|";
-            for (int i = 0; i < nbrJoueur + 1; i++)
+            plateauVisuel += "+"; // Affiche le dernier coin du tableau au-dessus
+            for (int i = 0; i < nbrJoueur * 4; i++) // 4 Lignes * joueurs. Cela va permettre de parcourir les lignes... RAPPEL: Une ligne est égale à un pion d'un joueur.
             {
-                trouver = false;
-                j = 0;
-                do
-                { 
-                    if (plateau[i, j] == i)
+                plateauVisuel += "\n|";
+                for (int j = 0; j < 27; j++) // 27 est équivaut au nombre de cases à franchir pour gagner
+                {
+                    if (plateau[i, j] == 1) { // Si le nombre est égale à 1, c'est un pion, si c'est égale à 0, c'est vide
+                        if(i == 0 || i == 1 || i == 2 || i == 3) // Regarde si cela concerne le joueur 1 en regardant le i qui pour rappel défini quel ligne il regarde dans plateau[]
+                        {
+                            plateauVisuel += "X|";
+                        } else if (i == 4 || i == 5 || i == 6 || i == 7) // Regarde si cela concerne le joueur 2 en regardant le i qui pour rappel défini quel ligne il regarde dans plateau[]
+                        {
+                            plateauVisuel += "H|";
+                        }
+                        else if (i == 8 || i == 9 || i == 10 || i == 11) // Regarde si cela concerne le joueur 3 en regardant le i qui pour rappel défini quel ligne il regarde dans plateau[]
+                        {
+                            plateauVisuel += "O|";
+                        }
+                        else if (i == 12 || i == 13 || i == 14 || i == 15) // Regarde si cela concerne le joueur 4 en regardant le i qui pour rappel défini quel ligne il regarde dans plateau[]
+                        {
+                            plateauVisuel += "G|";
+                        }
+                    } else
                     {
-                        for (int k = 1; k < j - 1; k++)
-                        {
-                            plateauVisuel = plateauVisuel + " ";
-                            plateauVisuel = plateauVisuel + "|";
-                        }
-                        plateauVisuel = plateauVisuel + "H";
-                        for (int k = 0; k < 27 - j; k++)
-                        {
-                            plateauVisuel = plateauVisuel + " ";
-                            plateauVisuel = plateauVisuel + "|";
-                        }
-                        trouver = true;
+                        plateauVisuel += " |";  // Met un espace vide si il n'y a aucun pion.
                     }
-                    j++;
-                } while (trouver == false);
-                plateauVisuel = plateauVisuel + "+\n|";
+                }
+
+            }
+            plateauVisuel += "\n";
+            for (int i = 0; i < 27; i++) // Mise en place de la barre en-dessous
+            {
+                plateauVisuel += "+-";
+            }
+            plateauVisuel += "+"; // Affiche le dernier coin du tableau en-dessous
+        }
+
+
+
+
+
+
+        public void De(out string deVisuel, out int de)
+        {
+            deVisuel = "";
+            pixelart mpp = new pixelart();
+            de = 0;
+            Random alea = new Random();
+            de = alea.Next(1, 6);
+            if (de == 1)
+            {
+                mpp.de1(ref deVisuel);
+            } else if(de == 2) {
+                mpp.de2(ref deVisuel);
+            } else if(de == 3)
+            {
+                mpp.de3(ref deVisuel);
+            } else if(de == 4)
+            {
+                mpp.de4(ref deVisuel);
+            } else
+            {
+                mpp.de6(ref deVisuel);
             }
         }
 
-        
+
+        public void VerifWin(int[,] plateau, out bool verif, out int gagnant)
+        {
+            verif = false;
+            gagnant = 0;
+
+            if (plateau[0, 26] == 1 && plateau[1, 26] == 1 && plateau[2, 26] == 1 && plateau[3, 26] == 1)
+            {
+                verif = true;
+                gagnant = 1;
+            } else if(plateau[4, 26] == 1 && plateau[5, 26] == 1 && plateau[6, 26] == 1 && plateau[7, 26] == 1) { 
+                verif = true;
+                gagnant = 2;
+            } else if(plateau[8, 26] == 1 && plateau[9, 26] == 1 && plateau[10, 26] == 1 && plateau[11, 26] == 1)
+            {
+                verif = true;
+                gagnant = 3;
+            } else if(plateau[12, 26] == 1 && plateau[13, 26] == 1 && plateau[14, 26] == 1 && plateau[15, 26] == 1)
+            {
+                verif = true;
+                gagnant = 4;
+            } else
+            {
+                verif = false;
+                gagnant = 0;
+            }
+        }
+
+
+        public void DeplacementPion(ref int[,] plateau, int pion, int player, int de)
+        {
+            bool piontrouver;
+            piontrouver = false;
+            int i;
+            i = 0;
+
+            if (player == 1)
+            {
+                if(pion == 1)
+                {
+                    do
+                    {
+                        if (plateau[0, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[0, i] = 0;
+                                plateau[0, 26] = 1;
+                            } else
+                            {
+                                plateau[0, i] = 0;
+                                plateau[0, i + de] = 1;
+                            }
+                        } else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                } else if(pion == 2)
+                {
+                    do
+                    {
+                        if (plateau[1, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[1, i] = 0;
+                                plateau[1, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[1, i] = 0;
+                                plateau[1, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                } else if(pion == 3)
+                {
+                    do
+                    {
+                        if (plateau[2, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[2, i] = 0;
+                                plateau[2, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[2, i] = 0;
+                                plateau[2, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                } else if(pion == 4)
+                {
+                    do
+                    {
+                        if (plateau[3, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[3, i] = 0;
+                                plateau[3, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[3, i] = 0;
+                                plateau[3, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+            } else if (player == 2)
+            {
+                if (pion == 1)
+                {
+                    do
+                    {
+                        if (plateau[4, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[4, i] = 0;
+                                plateau[4, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[4, i] = 0;
+                                plateau[4, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 2)
+                {
+                    do
+                    {
+                        if (plateau[5, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[5, i] = 0;
+                                plateau[5, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[5, i] = 0;
+                                plateau[5, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 3)
+                {
+                    do
+                    {
+                        if (plateau[6, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[6, i] = 0;
+                                plateau[6, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[6, i] = 0;
+                                plateau[6, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 4)
+                {
+                    do
+                    {
+                        if (plateau[7, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[7, i] = 0;
+                                plateau[7, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[7, i] = 0;
+                                plateau[7, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+            } else if (player == 3)
+            {
+                if (pion == 1)
+                {
+                    do
+                    {
+                        if (plateau[8, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[8, i] = 0;
+                                plateau[8, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[8, i] = 0;
+                                plateau[8, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 2)
+                {
+                    do
+                    {
+                        if (plateau[9, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[9, i] = 0;
+                                plateau[9, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[9, i] = 0;
+                                plateau[9, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 3)
+                {
+                    do
+                    {
+                        if (plateau[10, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[10, i] = 0;
+                                plateau[10, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[10, i] = 0;
+                                plateau[10, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 4)
+                {
+                    do
+                    {
+                        if (plateau[11, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[11, i] = 0;
+                                plateau[11, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[11, i] = 0;
+                                plateau[11, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+            } else
+            {
+                if (pion == 1)
+                {
+                    do
+                    {
+                        if (plateau[12, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[12, i] = 0;
+                                plateau[12, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[12, i] = 0;
+                                plateau[12, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 2)
+                {
+                    do
+                    {
+                        if (plateau[13, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[13, i] = 0;
+                                plateau[13, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[13, i] = 0;
+                                plateau[13, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 3)
+                {
+                    do
+                    {
+                        if (plateau[14, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[14, i] = 0;
+                                plateau[14, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[14, i] = 0;
+                                plateau[14, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+                else if (pion == 4)
+                {
+                    do
+                    {
+                        if (plateau[15, i] == 1)
+                        {
+                            piontrouver = true;
+                            if (i + de > 26)
+                            {
+                                plateau[15, i] = 0;
+                                plateau[15, 26] = 1;
+                            }
+                            else
+                            {
+                                plateau[15, i] = 0;
+                                plateau[15, i + de] = 1;
+                            }
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    } while (piontrouver == false);
+                }
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 

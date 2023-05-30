@@ -67,8 +67,8 @@ namespace _4Chevaux
                 Console.WriteLine("Les règles sont très simples ! \n");
                 Thread.Sleep(500);
                 Console.WriteLine("Chaque joueur (Jusque 4 joueurs) possède une écurie (Bleu - Rouge - Vert - Jaune). ");
-                Console.WriteLine("Et votre but consiste à ce que vos 4 chevaux qui se retrouvent au début à l'écurie (Il faut faire 6 pour les faire sortir de l'écurie et les placer au début du long chemin)");
-                Console.WriteLine("font le tour du plateau en suivant les chemins et en arrivant dans votre couloir et finir sur la dernière case.");
+                Console.WriteLine("Et votre but consiste à ce que vos 4 chevaux qui se retrouvent au début à l'écurie");
+                Console.WriteLine("font le tour du plateau en suivant le chemin et finir sur la dernière case.");
                 Console.WriteLine("Quand un cheval arrive sur une case déja occupée par un de ses chevaux,");
                 Console.WriteLine("alors il gagne une case en plus tandis que si c'est un cheval qui ne vous appartient pas, vous pouvez renvoyer le cheval dans son écurie et désormais votre cheval vole sa place.");
                 Thread.Sleep(500);

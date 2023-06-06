@@ -92,7 +92,13 @@ namespace _4Chevaux
 
         }
 
-
+        /// <summary>
+        /// Le but de ce morceau de programme est de attribuer à chaque pion en fonction du nombre de joueur, la place 0, donc la case de départ
+        /// 
+        /// nbrJoueur contient un entier entre 2 et 4
+        /// </summary>
+        /// <param name="nbrJoueur">C'est un entier qui contient le nombre de joueur</param>
+        /// <param name="plateau">Plateau est un tableau résumant toutes les coordonées des pions</param>
         public void AttributionStart(int nbrJoueur, ref int[,] plateau)
         {
             for (int i = 0; i < 27 ; i++) // Attribution des pions des deux premiers joueurs à la case de départ. Pas de if car par défaut, il faut minimum 2 joueurs
@@ -102,16 +108,8 @@ namespace _4Chevaux
                     if(i == 0)
                     {
                         plateau[j, i] = 1;
-                        plateau[j, i] = 1;
-                        plateau[j, i] = 1;
-                        plateau[j, i] = 1;
-                        plateau[j, i] = 1;
-                        plateau[j, i] = 1;
-                        plateau[j, i] = 1;
-                        plateau[j, i] = 1;
                     } else
                     {
-                        plateau[j, i] = 0;  // On place le reste vide
                         plateau[j, i] = 0;  // On place le reste vide
                     }
                 }
@@ -156,7 +154,14 @@ namespace _4Chevaux
         }
 
 
-
+        /// <summary>
+        /// Ce morceau de programme consisteras à convertir un tableau à deux dimensions à un string prêt à être affiché
+        /// 
+        /// nbrJoueur contient un entier entre 2 et 4 et plateau possède les coordonées de chaque pion
+        /// </summary>
+        /// <param name="nbrJoueur">C'est un entier qui contient le nombre de joueur</param>
+        /// <param name="plateau">Plateau est un tableau résumant toutes les coordonées des pions</param>
+        /// <param name="plateauVisuel">C'est un string comportant le plateau visuel avec les pions et les cases</param>
         public void ConvertirPlateauEnString(int nbrJoueur, int[,] plateau, out string plateauVisuel)
         {
             plateauVisuel = "PLATEAU:\n\n";
@@ -205,7 +210,11 @@ namespace _4Chevaux
 
 
 
-
+        /// <summary>
+        /// Ce morceau de programme permet de généré un nombre au hasard entre 1 et 6 pour le dé
+        /// </summary>
+        /// <param name="deVisuel">C’est un string comportant un pixel art en fonction du dé</param>
+        /// <param name="de">C’est un entier qui contient la valeur du dé généré au hasard</param>
         public void De(out string deVisuel, out int de)
         {
             deVisuel = "";
@@ -230,36 +239,107 @@ namespace _4Chevaux
             }
         }
 
-
-        public void VerifWin(int[,] plateau, out bool verif, out int gagnant)
+        /// <summary>
+        /// Cela vérifie en parcourant le plateau, s'il y a un gagnant
+        /// 
+        /// plateau contient des coordonées des pions et nbrJoueur est entre 2 et 4
+        /// </summary>
+        /// <param name="plateau">Plateau est un tableau résumant toutes les coordonées des pions</param>
+        /// <param name="nbrJoueur">C'est un entier qui contient le nombre de joueur</param>
+        /// <param name="verif">C'est un entier qui dit si oui ou non, il y a un joueur</param>
+        /// <param name="gagnant">C'est un entier qui dit s'il y a un gagnant, le numéro du joueur gagnant</param>
+        public void VerifWin(int[,] plateau, int nbrJoueur, out bool verif, out int gagnant)
         {
             verif = false;
             gagnant = 0;
 
-            if (plateau[0, 26] == 1 && plateau[1, 26] == 1 && plateau[2, 26] == 1 && plateau[3, 26] == 1)
+
+            if (nbrJoueur == 2)
             {
-                verif = true;
-                gagnant = 1;
-            } else if(plateau[4, 26] == 1 && plateau[5, 26] == 1 && plateau[6, 26] == 1 && plateau[7, 26] == 1) { 
-                verif = true;
-                gagnant = 2;
-            } else if(plateau[8, 26] == 1 && plateau[9, 26] == 1 && plateau[10, 26] == 1 && plateau[11, 26] == 1)
+                if (plateau[0, 26] == 1 && plateau[1, 26] == 1 && plateau[2, 26] == 1 && plateau[3, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 1;
+                }
+                else if (plateau[4, 26] == 1 && plateau[5, 26] == 1 && plateau[6, 26] == 1 && plateau[7, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 2;
+                } else
+                {
+                    verif = false;
+                    gagnant = 0;
+                }
+            } else if (nbrJoueur == 3)
             {
-                verif = true;
-                gagnant = 3;
-            } else if(plateau[12, 26] == 1 && plateau[13, 26] == 1 && plateau[14, 26] == 1 && plateau[15, 26] == 1)
+                if (plateau[0, 26] == 1 && plateau[1, 26] == 1 && plateau[2, 26] == 1 && plateau[3, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 1;
+                }
+                else if (plateau[4, 26] == 1 && plateau[5, 26] == 1 && plateau[6, 26] == 1 && plateau[7, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 2;
+                } else if (plateau[8, 26] == 1 && plateau[9, 26] == 1 && plateau[10, 26] == 1 && plateau[11, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 3;
+                }
+                else
+                {
+                    verif = false;
+                    gagnant = 0;
+                }
+            } else if (nbrJoueur == 4)
             {
-                verif = true;
-                gagnant = 4;
-            } else
-            {
-                verif = false;
-                gagnant = 0;
+                if (plateau[0, 26] == 1 && plateau[1, 26] == 1 && plateau[2, 26] == 1 && plateau[3, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 1;
+                }
+                else if (plateau[4, 26] == 1 && plateau[5, 26] == 1 && plateau[6, 26] == 1 && plateau[7, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 2;
+                }
+                else if (plateau[8, 26] == 1 && plateau[9, 26] == 1 && plateau[10, 26] == 1 && plateau[11, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 3;
+                }
+                else if (plateau[12, 26] == 1 && plateau[13, 26] == 1 && plateau[14, 26] == 1 && plateau[15, 26] == 1)
+                {
+                    verif = true;
+                    gagnant = 4;
+                }
+                else
+                {
+                    verif = false;
+                    gagnant = 0;
+                }
             }
+
+
+
+
+
+
+
         }
 
-
-        public void DeplacementPion(ref int[,] plateau, int pion, int player, int de)
+        /// <summary>
+        /// S'occupe du déplacement du joueur en fonction du dé et du pion choisit
+        /// 
+        /// pion, de, player, nbrJoueur possèdent tous une valeur
+        /// plateau possède les coordonées des joueurs
+        /// </summary>
+        /// <param name="plateau">Plateau est un tableau résumant toutes les coordonées des pions</param>
+        /// <param name="nbrJoueur">C’est un entier qui contient le nombre de joueur</param>
+        /// <param name="pion">C'est un entier qui permet de dire il s'agit de quel pion</param>
+        /// <param name="player">C'est un entier qui permet de dire il s'agit de quel joueur</param>
+        /// <param name="de">C'est un entier qui dit le nombre du dé</param>
+        public void DeplacementPion(ref int[,] plateau, int nbrJoueur, int pion, int player, int de)
         {
             bool piontrouver;
             piontrouver = false;
@@ -659,39 +739,6 @@ namespace _4Chevaux
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }

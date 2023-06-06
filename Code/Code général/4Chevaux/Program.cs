@@ -216,11 +216,11 @@ namespace _4Chevaux
                     pion = 4;
                 }
 
-                mp.DeplacementPion(ref plateau, pion, player, de);
+                mp.DeplacementPion(ref plateau, nbrJoueur, pion, player, de);
 
                 Console.Clear();
                 
-                mp.VerifWin(plateau, out verif, out gagnant);
+                mp.VerifWin(plateau, nbrJoueur, out verif, out gagnant);
                 mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
 
                 if (verif == false)
@@ -272,11 +272,11 @@ namespace _4Chevaux
                         pion = 4;
                     }
 
-                    mp.DeplacementPion(ref plateau, pion, player, de);
+                    mp.DeplacementPion(ref plateau, nbrJoueur, pion, player, de);
 
                     Console.Clear();
 
-                    mp.VerifWin(plateau, out verif, out gagnant);
+                    mp.VerifWin(plateau, nbrJoueur, out verif, out gagnant);
                     mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
 
                     if (verif == false)
@@ -329,11 +329,11 @@ namespace _4Chevaux
                                 pion = 4;
                             }
 
-                            mp.DeplacementPion(ref plateau, pion, player, de);
+                            mp.DeplacementPion(ref plateau, nbrJoueur, pion, player, de);
 
                             Console.Clear();
 
-                            mp.VerifWin(plateau, out verif, out gagnant);
+                            mp.VerifWin(plateau, nbrJoueur, out verif, out gagnant);
                             mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
 
                             if (verif == false) {
@@ -386,11 +386,11 @@ namespace _4Chevaux
                                         pion = 4;
                                     }
 
-                                    mp.DeplacementPion(ref plateau, pion, player, de);
+                                    mp.DeplacementPion(ref plateau, nbrJoueur, pion, player, de);
 
                                     Console.Clear();
 
-                                    mp.VerifWin(plateau, out verif, out gagnant);
+                                    mp.VerifWin(plateau, nbrJoueur, out verif, out gagnant);
                                     mp.ConvertirPlateauEnString(nbrJoueur, plateau, out plateauVisuel);
                                 }
                             }
@@ -404,6 +404,7 @@ namespace _4Chevaux
 
             Thread.Sleep(1000);
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Nous avons un gagnant!");
             Thread.Sleep(200);
             Console.WriteLine("Il s'agit du joueur numéro: \n\n");
@@ -411,15 +412,19 @@ namespace _4Chevaux
             if(gagnant == 1)
             {
                 mpp.de1(ref deVisuel);
+                Console.WriteLine(deVisuel);
             } else if (gagnant == 2)
             {
                 mpp.de2(ref deVisuel);
+                Console.WriteLine(deVisuel);
             } else if(gagnant == 3) 
             {
                 mpp.de3(ref deVisuel);
+                Console.WriteLine(deVisuel);
             } else
             {
                 mpp.de4(ref deVisuel);
+                Console.WriteLine(deVisuel);
             }
 
 

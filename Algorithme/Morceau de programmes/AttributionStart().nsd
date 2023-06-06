@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.32-11" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" namespace="" author="22015" created="2023-06-05" changedby="22015" changed="2023-06-05" origin="Structorizer 3.32-11" text="&#34;AttributionStart()&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<for text="&#34;for i &#60;- 0 to 26&#34;" comment="&#34;&#34;" counterVar="i" startValue="0" endValue="26" stepConst="1" style="COUNTER" color="ffffff" disabled="0">
+			<qFor>
+				<for text="&#34;for j &#60;- 0 to 7&#34;" comment="&#34;&#34;" counterVar="j" startValue="0" endValue="7" stepConst="1" style="COUNTER" color="ffffff" disabled="0">
+					<qFor>
+						<alternative text="&#34;(i == 0)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+							<qTrue>
+								<instruction text="&#34;plateau[j, i] = 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;plateau[j, i] = 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qFalse>
+						</alternative>
+					</qFor>
+				</for>
+			</qFor>
+		</for>
+		<alternative text="&#34;(nbrJoueur == 3 || nbrJoueur == 4)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qTrue>
+				<for text="&#34;for i &#60;- 0 to 26&#34;" comment="&#34;&#34;" counterVar="i" startValue="0" endValue="26" stepConst="1" style="COUNTER" color="ffffff" disabled="0">
+					<qFor>
+						<for text="&#34;for j &#60;- 8 to 11&#34;" comment="&#34;&#34;" counterVar="j" startValue="8" endValue="11" stepConst="1" style="COUNTER" color="ffffff" disabled="0">
+							<qFor>
+								<alternative text="&#34;(i == 0)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+									<qTrue>
+										<instruction text="&#34;plateau[j, i] = 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+									</qTrue>
+									<qFalse>
+										<instruction text="&#34;plateau[j, i] = 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+									</qFalse>
+								</alternative>
+							</qFor>
+						</for>
+					</qFor>
+				</for>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qFalse>
+		</alternative>
+		<alternative text="&#34;(brJoueur == 4)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qTrue>
+				<for text="&#34;for i &#60;- 0 to 26&#34;" comment="&#34;&#34;" counterVar="i" startValue="0" endValue="26" stepConst="1" style="COUNTER" color="ffffff" disabled="0">
+					<qFor>
+						<for text="&#34;for j &#60;- 12 to 15&#34;" comment="&#34;&#34;" counterVar="j" startValue="12" endValue="15" stepConst="1" style="COUNTER" color="ffffff" disabled="0">
+							<qFor>
+								<alternative text="&#34;(i == 0)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+									<qTrue>
+										<instruction text="&#34;plateau[j, i] = 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+									</qTrue>
+									<qFalse>
+										<instruction text="&#34;plateau[j, i] = 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+									</qFalse>
+								</alternative>
+							</qFor>
+						</for>
+					</qFor>
+				</for>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qFalse>
+		</alternative>
+	</children>
+</root>
